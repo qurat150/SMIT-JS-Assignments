@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentile Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <center>
+        <h1>Percentile Calculator by Qurat ul Ain</h1>
+    </center>
+    <center>
+        <h2>Total</h2>
+    </center>
+    <div class="table">
+        <table border="1">
+            <thead>
+                <th>subjects</th>
+                <th>Marks</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input id="subject1" placeholder="enter1" type="text"></td>
+                    <td><input id="marks1" placeholder="enter2" type="text"></td>
+                </tr>
+                <tr>
+                    <td><input id="subject2" placeholder="" type="text"></td>
+                    <td><input id="marks2" placeholder="" type="text"></td>
+                </tr>
+                <tr>
+                    <td><input id="subject3" placeholder="" type="text"></td>
+                    <td><input id="marks3" placeholder="" type="text"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button onclick="calculate(marks1 , marks2 , marks3)">Calculate : </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="results">
+        <h1>Your result is : </h1>
+        <ul>
+            <li id="reusltOfsub1"> </li>
+            <li id="reusltOfsub2"></li>
+            <li id="reusltOfsub3"></li>
+        </ul>
+        <h3 id="finalPercentage">And Your Percentage is :</h3>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
