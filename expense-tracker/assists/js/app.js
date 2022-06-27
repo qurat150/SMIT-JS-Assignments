@@ -1,51 +1,46 @@
-
-document.getElementById("btn").addEventListener("click", showCurrentSalary);
-var amount = 0;
+document.querySelector("#btn").addEventListener("click", showCurrentSalary)
+var inputAmount = 0;
 function showCurrentSalary() {
-    var showDescription = document.getElementById("inputDescript").value;
-    var inputAmount = +document.getElementById("inputAmount").value;
-    if (inputAmount > 0) {
-        amount = amount + inputAmount
-        console.log(amount)
-        console.log(inputAmount);
-        var html = `<div class=" incomeExpense">
-                    <div>
-                        <p>${showDescription}</p>
-                    </div>
-                    <div>
-                        <p class="showValue">${inputAmount}</p>
-                    </div>
-                </div>`
+    var getAmount = document.querySelector("#inputAmount").value
+    if (getAmount > 0) {
+        inputAmount = inputAmount + +getAmount
+        document.getElementById("currentBalance").innerHTML = inputAmount;
+        document.getElementById("income").innerHTML = inputAmount;
 
-        var div = document.createElement("div")
-        var div2 = document.createElement("div")
-        var div3 = document.createElement("div")
-        div.className = "incomeExpense"
+    } else if (getAmount < 0) {
+        document.getElementById("expense").innerHTML = getAmount
 
-        var p = document.createElement("p")
-        var p2 = document.createElement("p")
-
-        p.innerText = showDescription;
-        p2.innerText = inputAmount
-        p2.className = "showValue"
-
-        div2.append(p);
-        div3.append(p2);
-        div.append(div2, div3)
-        console.log(div);
-
-        var elements = document.querySelectorAll(".showValue");
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].innerHTML = amount
-        }
-    } else if (inputAmount < 0) {
-        document.getElementById("currentBalance").innerHTML = inputAmount + "(You are on loan)";
-        document.getElementById("expense").innerHTML = inputAmount;
-        document.getElementById("amount").innerHTML = inputAmount;
-        document.getElementById("income").innerHTML = "0.00";
     }
+    let createElem = document.createElement("div")
+    createElem.setAttribute("class" , "transactionHistoryDisplayNone incomeExpense")
 
-    // document.getElementById("description").innerHTML = showDescription;
-    // document.querySelector(".transactionHistoryDisplayNone", ".incomeExpense").style.display = "flex";
-    document.getElementById("history").innerHTML += html
+    let createChildDiv = document.createElement("div")
+
+    let createPinDiv = document.createElement("p")
+    createPinDiv.classList.add("description")
+    createPinDiv.innerText = 0.00
+
+    createChildDiv.append(createPinDiv)
+
+    let createSecondDiv =  document.createElement("div")
+
+    let createsecondPinDiv = document.createElement("p")
+    createsecondPinDiv.classList.add("amount")
+    createsecondPinDiv.classList.add("showValue")
+    createsecondPinDiv.innerText = 0.00
+
+    createSecondDiv.append(createsecondPinDiv)
+
+    createElem.append(createChildDiv)
+    createElem.append(createSecondDiv)
+    console.log(createElem);
+
+
+    // var getDiscription = document.querySelector("#inputDescript").value
+    // document.querySelector(".description").innerHTML = getDiscription
+    // document.querySelector("#amount").innerHTML = getAmount
+
+    document.querySelector("#inputAmount").value = " "
+    document.querySelector("#inputDescript").value = " "
 }
+

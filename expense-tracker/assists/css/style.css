@@ -27,7 +27,7 @@ body{
     margin-top: 20px;
     background-color: white;
 }
-#income , #description , #amount{
+#income , .description , .amount{
     color: #b6960a;
 }
 #expense{
@@ -43,7 +43,7 @@ body{
 }
 .transactionHistoryDisplayNone{
     height: 40px;
-    display: none;
+    /* display: none; */
 }
 .descriptStrt{
     text-align: start;
