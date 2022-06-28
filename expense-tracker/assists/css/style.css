@@ -45,6 +45,16 @@ body{
     height: 40px;
     /* display: none; */
 }
+.transactionHistoryDisplayNone:hover{
+    /* background-color: #7c7c7c; */
+    cursor: pointer;
+}
+/* .description:hover{
+    color: white;
+}
+.amount:hover{
+    color: white;
+} */
 .descriptStrt{
     text-align: start;
     margin-top: 20px;

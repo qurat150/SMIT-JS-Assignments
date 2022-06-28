@@ -2,6 +2,7 @@ document.querySelector("#btn").addEventListener("click", showCurrentSalary)
 var inputAmount = 0;
 function showCurrentSalary() {
     var getAmount = document.querySelector("#inputAmount").value
+    var getDiscription = document.querySelector("#inputDescript").value
     if (getAmount > 0) {
         inputAmount = inputAmount + +getAmount
         document.getElementById("currentBalance").innerHTML = inputAmount;
@@ -11,6 +12,7 @@ function showCurrentSalary() {
         document.getElementById("expense").innerHTML = getAmount
 
     }
+    
     let createElem = document.createElement("div")
     createElem.setAttribute("class" , "transactionHistoryDisplayNone incomeExpense")
 
@@ -18,7 +20,7 @@ function showCurrentSalary() {
 
     let createPinDiv = document.createElement("p")
     createPinDiv.classList.add("description")
-    createPinDiv.innerText = 0.00
+    createPinDiv.innerText = getDiscription
 
     createChildDiv.append(createPinDiv)
 
@@ -27,20 +29,17 @@ function showCurrentSalary() {
     let createsecondPinDiv = document.createElement("p")
     createsecondPinDiv.classList.add("amount")
     createsecondPinDiv.classList.add("showValue")
-    createsecondPinDiv.innerText = 0.00
+    createsecondPinDiv.innerText = inputAmount
 
     createSecondDiv.append(createsecondPinDiv)
 
     createElem.append(createChildDiv)
     createElem.append(createSecondDiv)
+
+    document.querySelector("#history").append(createElem)
     console.log(createElem);
 
-
-    // var getDiscription = document.querySelector("#inputDescript").value
-    // document.querySelector(".description").innerHTML = getDiscription
-    // document.querySelector("#amount").innerHTML = getAmount
-
-    document.querySelector("#inputAmount").value = " "
-    document.querySelector("#inputDescript").value = " "
+    document.querySelector("#inputAmount").value = ""
+    document.querySelector("#inputDescript").value = ""
 }
 
